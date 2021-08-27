@@ -3,7 +3,7 @@
     "name": "Porn Blocker",
     "version" : "1.0",
 
-    "description": "Blocks pages with pornographic content in it",
+    "description": "Blocks pornographic sites and pages",
 
     "icons" : {
         "48": "icons/my_icon.png"
@@ -12,7 +12,7 @@
     "content_scripts" : [
         {
             "matches" : ["<all_urls>"],
-            "js" : ["first_extension.js"]
+            "js" : ["content_script.js"]
         }
     ],
 
@@ -21,7 +21,16 @@
     },
 
     "options_ui" : {
-        "page": "options/options.html"
-    }
+        "page": "options/options.html",
+        "browser_style": true
+    },
+
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "{e1519176-502c-4246-ba57-75be7fd4d907}"
+        }
+      },
+
+    "permissions": ["storage"]
 
 }
