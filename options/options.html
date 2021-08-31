@@ -10,7 +10,7 @@
            
             <br/><br/>
             <label for="blockedWord">Enter a word to add to the blocked words list</label>
-            <input type="text" class="form-control" id="blockedWord" placeholder="e.g porn">
+            <input type="text" class="form-control" id="blockedWord" placeholder="e.g porn" size="20">
           </div>
           <br/><br/>
           
@@ -22,6 +22,24 @@
         
         <input type="submit" value="Save">
     </form>
+    
+    <hr>
+
+    <br/><br/>
+
+    <div class="container" style="margin-bottom: 25px;">
+        <h1>Current list of blocked words</h1>
+        <ul class="list-group" id="blockedWordList">
+        </ul>
+    </div>
+    
+    
+
+    <div class="container" style="margin-bottom: 20px;">
+        <h1>Current list of blocked sites</h1>
+        <ul class="list-group" id="blockedSiteList">
+        </ul>
+    </div>
     
     <script src="options.js"> </script>
   </body>

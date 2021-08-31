@@ -1,121 +1,81 @@
-// function saveOptions(e) {
-//     function onGot(item)
-//     {
+window.onload = onLoadFunc;
 
-//         let blockedWordList = item.blockedWordList;
-//         let blockedSiteList = item.blockedSiteList;
-    
-//         //if lists don't exist, initialize them to empty list
-//         if(!blockedWordList)
-//         {
-//             blockedWordList = [];
-//         }
-
-//         if(!blockedSiteList)
-//         {
-//             blockedSiteList = [];
-//         }
-
-//         //convert to set so no duplicates
-//         blockedWordList = new Set(blockedWordList);
-//         blockedSiteList = new Set(blockedSiteList);
-        
-//         browser.storage.sync.set({
-//             afa: Array.from(blockedWordList),
-//             afb: Array.from(blockedSiteList)
-//         });
-
-//         //add user input words to the lists
-//         blockedWordToAdd = 'mendoaz';
-//         blockedSiteToAdd = 'jenga';
-
-//         if(blockedWordToAdd)
-//             blockedWordList.add(blockedWordToAdd);
-        
-//         if(blockedSiteToAdd)
-//             blockedSiteList.add(blockedSiteToAdd);
-
-//         //put updated lists back in storage 
-//         browser.storage.sync.set({
-//             blockedWordList: Array.from(blockedWordList),
-//             blockedSiteList: Array.from(blockedSiteList)
-//         });
-//     }
-
-//     function onError(e)
-//     {
-//         browser.storage.sync.set({
-//             error: 'there was a fucking error'
-//         });
-//         console.log(e);
-//     }
-
-//     //to retrive blocked words list and blocked sites list from storage, and create if it doesn't exist
-//     let getting = browser.storage.sync.get();
-//     getting.then(onGot, onError);
-
-//     e.preventDefault();
-
-//   }
-
-// document.querySelector("form").addEventListener("submit", saveOptions);
-
-window.onload = testFunc;
-
-function testFunc()
+function onLoadFunc()
 {
 
-    function onSubmit()
+    var blockedWordList;
+    var blockedSiteList;
+
+    var blockedWord;
+    var blockedSite;
+
+    function onGot(item)
     {
-        blockedWord = document.getElementById("blockedWord").value;
-        blockedSite = document.getElementById("blockedSite").value;
-
-        function onGot(item)
-        {
-
-            let blockedWordList = item.blockedWordList;
-            let blockedSiteList = item.blockedSiteList;
+        blockedWordList = item.blockedWordList;
+        blockedSiteList = item.blockedSiteList;
         
-            //if lists don't exist, initialize them to empty list
-            if(!blockedWordList)
-            {
-                blockedWordList = [];
-            }
+        for(let i=0;i<blockedWordList.length;i++)
+        {
+            listItem = document.createElement("li");
+            listItem.setAttribute("class","list-group-item");
+            listItem.innerHTML = blockedWordList[i];
+            document.getElementById("blockedWordList").appendChild(listItem);
+        }
+        
+        for(let i=0;i<blockedSiteList.length;i++)
+        {
+            listItem = document.createElement("li");
+            listItem.setAttribute("class","list-group-item");
+            listItem.innerHTML = blockedSiteList[i];
+            document.getElementById("blockedSiteList").appendChild(listItem);
+        }
+    }
 
-            if(!blockedSiteList)
-            {
-                blockedSiteList = [];
-            }
+    function onError(e)
+    {
+        console.log(e);
+    }
 
-            blockedWordList = new Set(blockedWordList);
-            blockedSiteList = new Set(blockedSiteList);
+    function onSubmit(event)
+    {
 
-            if(blockedWordToAdd)
-                blockedWordList.add(blockedWordToAdd);
+        blockedWordToAdd = document.getElementById("blockedWord").value;
+        blockedSiteToAdd = document.getElementById("blockedSite").value;
+        
+        //if lists don't exist, initialize them to empty list
+        if(!blockedWordList)
+        {
+            blockedWordList = [];
+        }
+
+        if(!blockedSiteList)
+        {
+            blockedSiteList = [];
+        }
+
+        blockedWordList = new Set(blockedWordList);
+        blockedSiteList = new Set(blockedSiteList);
+        
+        if(blockedWordToAdd)
+        {
+            blockedWordList.add(blockedWordToAdd);
+        }
             
-            if(blockedSiteToAdd)
-                blockedSiteList.add(blockedSiteToAdd);
-
-            //put updated lists back in storage 
-            browser.storage.sync.set({
-                blockedWordList: Array.from(blockedWordList),
-                blockedSiteList: Array.from(blockedSiteList)
-            });
-        }
         
-        function onError(e)
-        {
-            console.log(e);
-        }
 
-        let blockedWordToAdd = document.querySelector("#blockedWord").value;
-        let blockedSiteToAdd = document.querySelector("#blockedSite").value;
-        
-        let getting = browser.storage.sync.get();
-        getting.then(onGot, onError);
+        if(blockedSiteToAdd)
+            blockedSiteList.add(blockedSiteToAdd);
+
+        //put updated lists back in storage 
+        browser.storage.sync.set({
+            blockedWordList: Array.from(blockedWordList),
+            blockedSiteList: Array.from(blockedSiteList)
+        });
+
     }
     
-
+    let getting = browser.storage.sync.get();
+    getting.then(onGot, onError);
     document.querySelector("form").addEventListener("submit", onSubmit);
     
 }
