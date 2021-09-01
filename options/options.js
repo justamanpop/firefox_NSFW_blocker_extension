@@ -6,9 +6,6 @@ function onLoadFunc()
     var blockedWordList;
     var blockedSiteList;
 
-    var blockedWord;
-    var blockedSite;
-
     function onGot(item)
     {
         blockedWordList = item.blockedWordList;
@@ -38,9 +35,13 @@ function onLoadFunc()
 
     function onSubmit(event)
     {
+        event.preventDefault();
 
         blockedWordToAdd = document.getElementById("blockedWord").value;
         blockedSiteToAdd = document.getElementById("blockedSite").value;
+
+        blockedWordToDelete = document.getElementById("blockedWordDelete").value;
+        blockedSiteToDelete = document.getElementById("blockedSiteDelete").value;
         
         //if lists don't exist, initialize them to empty list
         if(!blockedWordList)
@@ -57,14 +58,17 @@ function onLoadFunc()
         blockedSiteList = new Set(blockedSiteList);
         
         if(blockedWordToAdd)
-        {
             blockedWordList.add(blockedWordToAdd);
-        }
-            
         
 
         if(blockedSiteToAdd)
             blockedSiteList.add(blockedSiteToAdd);
+
+        if(blockedWordToDelete)
+            blockedWordList.delete(blockedWordToDelete);
+        
+        if(blockedSiteToDelete)
+            blockedSiteList.delete(blockedSiteToDelete);
 
         //put updated lists back in storage 
         browser.storage.sync.set({

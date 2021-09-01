@@ -25,7 +25,6 @@ async function onGot(item) {
     //if they are already in storage, nothing to do here
     if(item.blockedWordList && item.blockedSiteList)
     {
-        console.log('already exists');
         test = item;
         jsonContent = {blocked_words:item.blockedWordList, blocked_sites:item.blockedSiteList};   
     }

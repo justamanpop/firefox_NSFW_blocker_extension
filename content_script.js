@@ -8,8 +8,6 @@ function receiveMessage(req, sender, response)
     blocked_sites = jsonContent.blocked_sites;
     current_url = window.location.href.toLowerCase();
 
-    console.log('storage values are ', req.test);
-
     allow = true;
 
     for(let i=0,j=0; i< blocked_words.length || j<blocked_sites.length; i++,j++)

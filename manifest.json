@@ -3,7 +3,7 @@
     "name": "Porn Blocker",
     "version" : "1.0",
 
-    "description": "Blocks pornographic sites and pages",
+    "description": "Simple extension that blocks pornographic sites and pages by scanning the URL for certain words. Easily add and remove websites and keywords to block.",
 
     "icons" : {
         "48": "icons/my_icon.png"
