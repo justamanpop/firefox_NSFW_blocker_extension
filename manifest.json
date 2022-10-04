@@ -31,6 +31,12 @@
         }
       },
 
-    "permissions": ["storage"]
+    "permissions": ["storage", "tabs"],
+
+    "browser_action": {
+        "default_icon": "icons/my_icon.png",
+        "default_title": "NSFW Blocker",
+        "default_popup": "browser_action/view.html"
+    }
 
 }

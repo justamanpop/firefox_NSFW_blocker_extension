@@ -1,60 +1,96 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  </head>
+	<head>
+		<meta charset="utf-8" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+			crossorigin="anonymous"
+		/>
+	</head>
 
-  <body>
-    <form>
+	<body>
+		<form>
+			<div class="form-group">
+				<br /><br />
+				<label for="blockedWord" style="margin-left: 5px"
+					>Enter a word to add to the blocked words list</label
+				>
+				<input
+					type="text"
+					class="form-control"
+					id="blockedWord"
+					placeholder="e.g. porn"
+					style="width: 430px; margin-left: 5px; margin-top: 5px"
+				/>
+			</div>
+			<br />
 
-        <div class="form-group">
-            <br/><br/>
-            <label for="blockedWord" style="margin-left: 5px;">Enter a word to add to the blocked words list</label>
-            <input type="text" class="form-control" id="blockedWord" placeholder="e.g porn" style="width: 430px;margin-left: 5px;margin-top: 5px;">
-          </div>
-          <br/>
-          
-          <div class="form-group">
-            <label for="blockedSite" style="margin-left: 5px;">Enter a site name to add to the blocked sites list</label>
-            <input type="text" class="form-control" id="blockedSite" placeholder="e.g pornhub" style="width: 430px;margin-left: 5px;margin-top: 5px;">
-          </div>
-          <br/><br/>
+			<div class="form-group">
+				<label for="blockedSite" style="margin-left: 5px"
+					>Enter a site name to add to the blocked sites list</label
+				>
+				<input
+					type="text"
+					class="form-control"
+					id="blockedSite"
+					placeholder="e.g. pornhub"
+					style="width: 430px; margin-left: 5px; margin-top: 5px"
+				/>
+			</div>
+			<br /><br />
 
-          <div class="form-group">
-            <br/>
-            <label for="blockedWordDelete" style="margin-left: 5px;">Enter a word to remove from the blocked words list</label>
-            <input type="text" class="form-control" id="blockedWordDelete" placeholder="e.g porn" style="width: 430px;margin-left: 5px;margin-top: 5px;">
-          </div>
-          <br/>
+			<div class="form-group">
+				<br />
+				<label for="blockedWordDelete" style="margin-left: 5px"
+					>Enter a word to remove from the blocked words list</label
+				>
+				<input
+					type="text"
+					class="form-control"
+					id="blockedWordDelete"
+					placeholder="e.g. porn"
+					style="width: 430px; margin-left: 5px; margin-top: 5px"
+				/>
+			</div>
+			<br />
 
-          <div class="form-group">
-            <label for="blockedSiteDelete" style="margin-left: 5px;">Enter a word to remove from the blocked sites list</label>
-            <input type="text" class="form-control" id="blockedSiteDelete" placeholder="e.g porn" style="width: 430px;margin-left: 5px;margin-top: 5px;">
-          </div>
-          <br/>
-        
-        <input type="submit" value="Change" style="margin-left: 5px;" class="btn btn-primary">
-    </form>
-    
-    <hr>
+			<div class="form-group">
+				<label for="blockedSiteDelete" style="margin-left: 5px"
+					>Enter a word to remove from the blocked sites list</label
+				>
+				<input
+					type="text"
+					class="form-control"
+					id="blockedSiteDelete"
+					placeholder="e.g. pornhub"
+					style="width: 430px; margin-left: 5px; margin-top: 5px"
+				/>
+			</div>
+			<br />
 
-    <br/><br/>
+			<input
+				type="submit"
+				value="Change"
+				style="margin-left: 5px"
+				class="btn btn-primary"
+			/>
+		</form>
 
-    <div class="container" style="margin-bottom: 25px;">
-        <h1>Current list of blocked words</h1>
-        <ul class="list-group" id="blockedWordList">
-        </ul>
-    </div>
-    
-    
+		<hr />
 
-    <div class="container" style="margin-bottom: 20px;">
-        <h1>Current list of blocked sites</h1>
-        <ul class="list-group" id="blockedSiteList">
-        </ul>
-    </div>
-    
-    <script src="options.js"> </script>
-  </body>
+		<br /><br />
 
+		<div class="container" style="margin-bottom: 25px">
+			<h1>Current list of blocked words</h1>
+			<ul class="list-group" id="blockedWordList"></ul>
+		</div>
+
+		<div class="container" style="margin-bottom: 20px">
+			<h1>Current list of blocked sites</h1>
+			<ul class="list-group" id="blockedSiteList"></ul>
+		</div>
+
+		<script src="options.js"></script>
+	</body>
 </html>

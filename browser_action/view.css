@@ -1,0 +1,51 @@
+.main {
+    display: grid;
+    grid-template-rows: 4em 10em 7em;
+}
+
+
+.optionsButton, .addCurrentSiteButton {
+    margin-left: 0.25em;
+    height: 2em;
+    align-self: center;
+}
+
+.optionsButton {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    width: 5em;
+}
+
+.updateBlockListButton {
+    margin-left: 0.25em;
+}
+
+.addCurrentSiteButton {
+    width: 10em;
+}
+
+.addInputsBlock {
+    border-style: solid;
+    border-width: 0.25px 0;
+    padding-top: 1em;
+}
+
+.addCurrentSiteContainer {
+    display: grid;
+    grid-template-rows: 3em 3em;
+    padding-top: 0.5em;
+}
+
+.labelClass {
+    margin-bottom: 1em;
+    margin-right: 2em;
+    margin-left: 0.25em;
+}
+
+.inputClass {
+    margin-left: 0.25em;
+}
+
+#successMessage {
+    color:green;
+}

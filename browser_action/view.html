@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>NSFW Blocker</title>
+		<link href="view.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="main">
+			<button id="options" class="optionsButton" type="button" autofocus>
+				Options
+			</button>
+			<div class="addInputsBlock">
+				<div>
+					<label for="blockedWord" class="labelClass"
+						>Add word to block list</label
+					>
+					<br />
+					<input
+						type="text"
+						name="blockWord"
+						id="blockWord"
+						class="inputClass"
+					/>
+				</div>
+				<br />
+
+				<div>
+					<label for="blockedSite" class="labelClass"
+						>Add site to block list</label
+					><br />
+					<input
+						type="text"
+						name="blockSite"
+						id="blockSite"
+						class="inputClass"
+					/>
+				</div>
+				<br />
+
+				<button
+					class="updateBlockListButton"
+					id="updateBlockListButton"
+				>
+					Update block list
+				</button>
+			</div>
+
+			<div class="addCurrentSiteContainer">
+				<button
+					class="addCurrentSiteButton"
+					id="blockCurrentSiteButton"
+				>
+					Block current site
+				</button>
+
+				<button
+					class="addCurrentSiteButton"
+					id="unblockCurrentSiteButton"
+				>
+					Unblock current site
+				</button>
+			</div>
+		</div>
+
+		<p id="successMessage"></p>
+
+		<script src="view.js"></script>
+	</body>
+</html>
